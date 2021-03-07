@@ -1,0 +1,31 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "cp .next/public/service-worker.js public",
+    "lint": "eslint --fix . && echo 'Lint complete.'",
+    "codegen": "graphql-codegen --config codegen.yml",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
+    "apollo-boost": "^0.4.9",
+    "apollo-server-micro": "^2.21.0",
+    "graphql": "^15.5.0",
+    "next": "10.0.7",
+    "next-with-apollo": "^5.1.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "sass": "^1.32.8",
+    "typescript-plugin-css-modules": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.31",
+    "@types/react": "^17.0.2",
+    "dotenv": "^8.2.0",
+    "typescript": "^4.2.3"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "compare-noodles",
+  "version": "0.0.1",
+  "description": "A NextJS Typescript and NestJS TypeORM GraphQL boilerplate",
+  "author": "Maxim Tretiak <mastekator95@gmail.com>",
+  "private": true,
+  "license": "MIT"
+}

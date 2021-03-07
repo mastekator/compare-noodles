@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "esnext",
+    "lib": [
+      "esnext"
+    ],
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "incremental": true,
+    "paths": {
+      "@constants": [
+        "src/config/constants"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/graphql.ts"
+  ],
+  "include": [
+    "src/**/*.ts"
+  ]
+}
