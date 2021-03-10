@@ -1,6 +1,7 @@
 import {useQuery} from '@apollo/client'
 import {USERS_QUERY} from 'graphql/queries'
 import React from 'react'
+import {DefaultLayout} from '../components/layouts/Default'
 
 const Home: React.FC = () => {
     const {loading, data} = useQuery(USERS_QUERY)
@@ -18,5 +19,7 @@ const Home: React.FC = () => {
         })}
     </div>
 }
+
+Home.Layout = DefaultLayout
 
 export default Home
