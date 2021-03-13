@@ -1,5 +1,7 @@
 import React from 'react'
 import {useForm} from 'react-hook-form'
+import * as yup from 'yup'
+import {yupResolver} from '@hookform/resolvers/yup'
 import {Button, FormControl, FormErrorMessage, FormLabel, Input, Stack} from '@chakra-ui/react'
 
 type formData = {
@@ -8,7 +10,18 @@ type formData = {
 
 export const ForgotPasswordForm: React.FC = () => {
 
-    const {handleSubmit, errors, register} = useForm()
+    const schema = yup.object()
+        .shape({
+            email: yup.string()
+                .email('Enter a valid email')
+                .required('Email is a required field')
+        })
+
+    const {handleSubmit, errors, register} = useForm(
+        {
+            resolver: yupResolver(schema)
+        }
+    )
 
     const onSubmitHandler = (values: formData) => {
         console.log(values)

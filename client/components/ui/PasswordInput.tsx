@@ -12,7 +12,7 @@ import {
     InputRightElement,
     useDisclosure,
     useMergeRefs,
-    useColorModeValue as mode
+    useColorModeValue as mode, FormErrorMessage
 } from '@chakra-ui/react'
 import Link from 'next/link'
 
@@ -20,10 +20,11 @@ interface Props extends InputProps {
     forgot?: boolean
     name?: string
     label?: string
+    errorText?: string
 }
 
 export const PasswordField = forwardRef<HTMLInputElement, Props>((props, ref) => {
-    const {forgot, name = 'password', label = 'Password', ...rest} = props
+    const {forgot, name = 'password', isInvalid, errorText, label = 'Password', ...rest} = props
     const {isOpen, onToggle} = useDisclosure()
     const inputRef = useRef<HTMLInputElement>(null)
 
@@ -41,7 +42,7 @@ export const PasswordField = forwardRef<HTMLInputElement, Props>((props, ref) =>
         }
     }
 
-    return <FormControl id={name}>
+    return <FormControl isInvalid={isInvalid} id={name}>
         <Flex justify="space-between">
             <FormLabel>{label}</FormLabel>
 
@@ -75,6 +76,9 @@ export const PasswordField = forwardRef<HTMLInputElement, Props>((props, ref) =>
                 {...rest}
             />
         </InputGroup>
+        <FormErrorMessage>
+            {isInvalid && errorText}
+        </FormErrorMessage>
     </FormControl>
 })
 
