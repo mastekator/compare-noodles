@@ -5,19 +5,25 @@ import {
     Button,
     Heading,
     SimpleGrid,
-    Text,
+    Text, useColorMode,
     useColorModeValue as mode,
     VisuallyHidden
 } from '@chakra-ui/react'
 import {Logo} from '../components/ui/Logo'
-import {LoginForm} from 'components/forms/LoginForm'
+import {SignInForm} from 'components/forms/SignInForm'
 import {DividerWithText} from '../components/ui/DividerWithText'
 import Link from 'next/link'
 
-const Login: React.FC = () => {
-    return <Box bg={mode('gray.50', 'inherit')} minH="100vh" py="12" px={{sm: '6', lg: '8'}}>
+const SignIn: React.FC = () => {
+    const {colorMode} = useColorMode()
+    const color = {light: 'black', dark: 'white'}
+
+    return <Box
+        color={color[colorMode]}
+        bg={mode('gray.50', 'inherit')}
+        minH="100vh" py="12" px={{sm: '6', lg: '8'}}>
         <Box maxW={{sm: 'md'}} mx={{sm: 'auto'}} w={{sm: 'full'}}>
-            <Box mb={{base: '10', md: '28'}}>
+            <Box mb={{base: '10', md: '20'}}>
                 <Logo mx="auto" w="fit-content"/>
             </Box>
             <Heading mt="6" textAlign="center" size="xl" fontWeight="extrabold">
@@ -32,7 +38,7 @@ const Login: React.FC = () => {
                     _hover={{color: 'teal'}}
                     display={{base: 'block', sm: 'revert'}}
                 >
-                    <Link href='/register'>
+                    <Link href='/sign-up'>
                         Sign up for free!
                     </Link>
                 </Box>
@@ -46,20 +52,20 @@ const Login: React.FC = () => {
                 shadow="base"
                 rounded={{sm: 'lg'}}
             >
-                <LoginForm/>
+                <SignInForm/>
                 <DividerWithText mt="6">or continue with</DividerWithText>
                 <SimpleGrid mt="6" columns={3} spacing="3">
                     <Button color="currentColor" variant="outline">
                         <VisuallyHidden>Login with Facebook</VisuallyHidden>
-                        <IoLogoFacebook/>
+                        <IoLogoFacebook size={24}/>
                     </Button>
                     <Button color="currentColor" variant="outline">
                         <VisuallyHidden>Login with Google</VisuallyHidden>
-                        <IoLogoGoogle/>
+                        <IoLogoGoogle size={24}/>
                     </Button>
                     <Button color="currentColor" variant="outline">
                         <VisuallyHidden>Login with Github</VisuallyHidden>
-                        <IoLogoGithub/>
+                        <IoLogoGithub size={24}/>
                     </Button>
                 </SimpleGrid>
             </Box>
@@ -67,4 +73,4 @@ const Login: React.FC = () => {
     </Box>
 }
 
-export default Login
+export default SignIn

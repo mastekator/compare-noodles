@@ -24,7 +24,7 @@ export const MenuIcons: React.FC<Props> = (props) => {
         >
             <LangModeSwitch/>
             <DarkModeSwitch/>
-            <Link href={'/login'}>
+            <Link href={'/sign-in'}>
                 <IconButton
                     aria-label="login"
                     variant="ghost"

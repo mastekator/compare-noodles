@@ -8,7 +8,7 @@ type formData = {
     password: string
 }
 
-export const LoginForm: React.FC = () => {
+export const SignInForm: React.FC = () => {
 
     const {handleSubmit, errors, register} = useForm()
 
@@ -25,7 +25,7 @@ export const LoginForm: React.FC = () => {
                     {errors.email && errors.email.message}
                 </FormErrorMessage>
             </FormControl>
-            <PasswordField ref={register}/>
+            <PasswordField forgot ref={register}/>
             <Button type="submit" colorScheme="teal" size="lg" fontSize="md">
                 Sign in
             </Button>

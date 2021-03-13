@@ -16,8 +16,14 @@ import {
 } from '@chakra-ui/react'
 import Link from 'next/link'
 
+interface Props extends InputProps {
+    forgot?: boolean
+    name?: string
+    label?: string
+}
 
-export const PasswordField = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+export const PasswordField = forwardRef<HTMLInputElement, Props>((props, ref) => {
+    const {forgot, name = 'password', label = 'Password', ...rest} = props
     const {isOpen, onToggle} = useDisclosure()
     const inputRef = useRef<HTMLInputElement>(null)
 
@@ -35,10 +41,11 @@ export const PasswordField = forwardRef<HTMLInputElement, InputProps>((props, re
         }
     }
 
-    return <FormControl id="password">
+    return <FormControl id={name}>
         <Flex justify="space-between">
-            <FormLabel>Password</FormLabel>
-            <Box
+            <FormLabel>{label}</FormLabel>
+
+            {forgot && <Box
                 as={'span'}
                 color={mode('teal.600', 'teal.200')}
                 _hover={{color: 'teal'}}
@@ -48,11 +55,11 @@ export const PasswordField = forwardRef<HTMLInputElement, InputProps>((props, re
                     Forgot Password?
                 </Link>
             </Box>
+            }
         </Flex>
         <InputGroup>
             <InputRightElement>
                 <IconButton
-                    bg="transparent !important"
                     variant="ghost"
                     aria-label={isOpen ? 'Mask password' : 'Reveal password'}
                     icon={isOpen ? <HiEyeOff/> : <HiEye/>}
@@ -61,11 +68,11 @@ export const PasswordField = forwardRef<HTMLInputElement, InputProps>((props, re
             </InputRightElement>
             <Input
                 ref={mergeRef}
-                name="password"
+                name={name}
                 type={isOpen ? 'text' : 'password'}
                 autoComplete="current-password"
                 required
-                {...props}
+                {...rest}
             />
         </InputGroup>
     </FormControl>
