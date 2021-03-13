@@ -23,8 +23,9 @@ module.exports = {
         node: true
     },
     ignorePatterns: [
+        'components/ui/icons',
         '.eslintrc.js',
-        'node_modules',
+        'node_modules'
     ],
     'rules': {
         'max-len': [

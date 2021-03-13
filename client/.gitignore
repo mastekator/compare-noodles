@@ -49,5 +49,8 @@ lerna-debug.log*
 .env.test.local
 .env.production.local
 
+# storybook
+.storybook
+
 # vercel
 .vercel

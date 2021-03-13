@@ -8,7 +8,9 @@
     "postbuild": "cp .next/public/service-worker.js public",
     "lint": "eslint --fix . && echo 'Lint complete.'",
     "codegen": "graphql-codegen --config codegen.yml",
-    "start": "next start"
+    "start": "next start",
+    "storybook": "start-storybook -p 3001",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
@@ -16,6 +18,7 @@
     "@chakra-ui/react": "^1.3.4",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
+    "@hookform/resolvers": "^1.3.5",
     "apollo-boost": "^0.4.9",
     "apollo-server-micro": "^2.21.0",
     "framer-motion": "^3.10.2",
@@ -25,12 +28,20 @@
     "next-with-apollo": "^5.1.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-hook-form": "^6.15.4",
+    "react-icons": "^4.2.0",
     "sass": "^1.32.8",
     "typescript-plugin-css-modules": "^3.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
+    "@storybook/react": "^6.1.21",
     "@types/node": "^14.14.31",
     "@types/react": "^17.0.2",
+    "babel-loader": "^8.2.2",
     "dotenv": "^8.2.0",
     "typescript": "^4.2.3"
   }

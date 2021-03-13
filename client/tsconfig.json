@@ -45,6 +45,7 @@
     "**/*.tsx"
   ],
   "exclude": [
+    "components/ui/icons",
     "node_modules",
     ".next"
   ]
