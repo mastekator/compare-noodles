@@ -1,5 +1,5 @@
 import cookieParser from 'cookie-parser'
-// import helmet from 'helmet'
+import helmet from 'helmet'
 
 import {NestFactory} from '@nestjs/core'
 import {AppModule} from './app.module'
@@ -10,7 +10,7 @@ async function bootstrap() {
     const app = await NestFactory.create(AppModule)
 
     app.use(cookieParser())
-    // app.use(helmet())
+    app.use(helmet({contentSecurityPolicy: (ENV === 'production') ? undefined : false}))
 
     app.useGlobalPipes(
         new ValidationPipe({
