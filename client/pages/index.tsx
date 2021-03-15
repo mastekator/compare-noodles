@@ -1,26 +1,21 @@
+import React from 'react'
 import {useQuery} from '@apollo/client'
 import {USERS_QUERY} from 'graphql/queries'
-import React from 'react'
-import {DefaultLayout} from '../components/layouts/Default'
-import {Container} from '../components/Container'
+import {DefaultLayout} from '../components/layouts/DefaultLayout'
+import {AppContainer} from 'components/AppContainer'
 
 const Home: React.FC = () => {
-    const {loading, data} = useQuery(USERS_QUERY)
+    const {loading, data, error} = useQuery(USERS_QUERY)
 
-    if (loading || !data) {
-        return <h1>Loading</h1>
-    }
+    console.log('loading', loading)
+    console.log('data', data)
+    console.log('error', error)
 
-    return <Container>
-        <h1>Test</h1>
-        {data.users.map(user => {
-            return <p key={user.id}>
-                {user.name}
-            </p>
-        })}
-    </Container>
+    return <DefaultLayout title={'Main page'}>
+        <AppContainer maxW="container.lg">
+            <h1>Test</h1>
+        </AppContainer>
+    </DefaultLayout>
 }
-
-Home.Layout = DefaultLayout
 
 export default Home

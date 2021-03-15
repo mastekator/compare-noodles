@@ -10,11 +10,16 @@ const fonts = {
 const breakpoints = createBreakpoints({
     sm: '40em',
     md: '52em',
-    lg: '64em',
+    lg: '60em',
     xl: '80em'
 })
 
 const theme = extendTheme({
+    sizes: {
+      container: {
+          lg: '60em'
+      }
+    },
     colors: {
         black: '#2D3748'
     },

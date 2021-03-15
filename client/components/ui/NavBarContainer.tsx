@@ -15,7 +15,7 @@ export const NavBarContainer: React.FC = (props) => {
         bg={bgColor[colorMode]}
         color={color[colorMode]}
     >
-        <Container maxWidth={964}>
+        <Container {...rest}>
             <Flex
                 as="nav"
                 align="center"
@@ -24,7 +24,6 @@ export const NavBarContainer: React.FC = (props) => {
                 w="100%"
                 px={[4]}
                 py={[3]}
-                {...rest}
             >
                 {children}
             </Flex>

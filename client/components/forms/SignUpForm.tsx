@@ -16,11 +16,11 @@ export const SignUpForm: React.FC = () => {
     const schema = yup.object()
         .shape({
             email: yup.string()
-                .email('Enter a valid email')
-                .required('Email is a required field'),
+                .required('Email is a required field')
+                .email('Enter a valid email'),
             password: yup.string()
-                .min(8, 'Minimum password length 8 characters')
-                .required('Password is a required field'),
+                .required('Password is a required field')
+                .min(8, 'Minimum password length 8 characters'),
             repeatPassword: yup.string()
                 .required('Password confirmation is a required field')
                 .oneOf([yup.ref('password'), null], 'Passwords must match')

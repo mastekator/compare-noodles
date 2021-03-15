@@ -1,20 +1,17 @@
 import React from 'react'
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
 
-import {Container} from '../components/Container'
-import {Main} from '../components/Main'
 import CTA from '../components/CTA'
-import {DefaultLayout} from '../components/layouts/Default'
+import {AppContainer} from 'components/AppContainer'
+import {LandingLayout} from '../components/layouts/LandingLayout'
 
 const Landing: React.FC = () => {
-    return <Container height="100vh">
-        <Main>
+    return <LandingLayout title={'Landing'}>
+        <AppContainer height="100vh" maxW="container.xl">
             <CTA/>
-        </Main>
-    </Container>
+        </AppContainer>
+    </LandingLayout>
 }
-
-Landing.Layout = DefaultLayout
 
 export const getStaticProps = async ({locale}) => ({
     props: {

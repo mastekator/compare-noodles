@@ -1,13 +1,13 @@
 import React from 'react'
 import {useTranslation} from 'next-i18next'
 
-import {Link as ChakraLink, Button, Text} from '@chakra-ui/react'
-import {Container} from './Container'
+import {Button, Text, Flex} from '@chakra-ui/react'
+import Link from 'next/link'
 
 const CTA: React.FC = () => {
     const {t} = useTranslation('cta')
 
-    return <Container
+    return <Flex
         flexDirection="row"
         position="relative"
         bottom="0"
@@ -16,16 +16,12 @@ const CTA: React.FC = () => {
         py={2}
     >
         <Text>{t('description')}</Text>
-        <ChakraLink
-            href="/"
-            flexGrow={3}
-            mx={2}
-        >
+        <Link href="/">
             <Button width="100%" variant="solid" colorScheme="green">
                 {t('compare')}
             </Button>
-        </ChakraLink>
-    </Container>
+        </Link>
+    </Flex>
 }
 
 export default CTA
