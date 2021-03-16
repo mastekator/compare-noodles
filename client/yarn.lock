@@ -3012,6 +3012,13 @@
     "@types/react" "*"
     "@types/reactcss" "*"
 
+"@types/react-kawaii@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@types/react-kawaii/-/react-kawaii-0.11.0.tgz#99e8454c006f9e163f2910d44d15c0f3908ffcaf"
+  integrity sha512-SgasNJZL2DaHt//sxWWDHv1j4HAznkUpHfYh9BGOsDku/DDu6dDATUQSkTYan6883YYSEP+nJM8F0FGxhrCUSg==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-syntax-highlighter@11.0.4":
   version "11.0.4"
   resolved "https://registry.npmjs.org/@types/react-syntax-highlighter/-/react-syntax-highlighter-11.0.4.tgz"
@@ -9842,6 +9849,13 @@ react-is@^17.0.1:
   version "17.0.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.1.tgz"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
+
+react-kawaii@^0.17.0:
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/react-kawaii/-/react-kawaii-0.17.0.tgz#18ba11979c32e5932ffc78fb4042898b3a0d4a64"
+  integrity sha512-BP2FCZC5IH2P3bXBAdoikMapRQEBu4ncLW5P2TKZjDYfsaq3kiSbU8DXqIH7UDWpAdI5ofhWJ62F6LqKD5TLFQ==
+  dependencies:
+    prop-types "^15.6.2"
 
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"

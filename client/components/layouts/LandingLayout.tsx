@@ -6,10 +6,8 @@ type Props = {
     title: string
 }
 
-
 export const LandingLayout: React.FC<Props> = (props) => {
     const {title, children} = props
-
     return <>
         <Head>
             <title>{title}</title>
@@ -17,6 +15,6 @@ export const LandingLayout: React.FC<Props> = (props) => {
             <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
         </Head>
         <Header maxW="container.xl"/>
-        <div id="main">{children}</div>
+        {children}
     </>
 }

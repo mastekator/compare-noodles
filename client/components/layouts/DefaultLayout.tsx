@@ -15,6 +15,6 @@ export const DefaultLayout: React.FC<Props> = (props) => {
             <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
         </Head>
         <Header maxW="container.lg"/>
-        <div id="main">{children}</div>
+        {children}
     </>
 }
